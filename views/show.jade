@@ -1,0 +1,33 @@
+html
+   head
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   
+   body
+      center 
+         h1 this is a desc one
+            img(src=`${result.url}`)
+            div= result.name 
+            div= result.description
+            - result.commment.forEach((comm)=>{
+              h1= `${comm.author.username}`
+              div= `${comm.commentdf}`
+                 if result.author.id.equals(currentUser._id)
+                   a(href="/campgrounds/" + result._id + "/comment/" + comm._id +"/edit") EDIT
+                   form(action="/campgrounds/" + result._id + "/comment/" + comm._id +"?_method=DELETE" method="POST")
+                       button(type="submit")  DELETE   
+            //- li=  username 
+               
+            //- li=  comm.commentdf
+            - })
+            div created by 
+               span= result.author.username  
+              
+          
+          a(href="/campgrounds" class="btn btn-succes") GO BACK
+          a(href=`/campgrounds/${result._id}/comment/new` class="btn inverse")  ADD NEW COMMENT
+
+          if result.author.id.equals(currentUser._id)
+                a(href="/campgrounds/" + result._id + "/edit" class="btn btn-succes") EDIT THIS 
+                form(action="/campgrounds/" + result._id +"/delete?_method=DELETE" method="POST")
+                    button(class="btn btn-succes") DELETE 
+  a(href="/logout") LOGOUT

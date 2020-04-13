@@ -1,0 +1,20 @@
+include ./partials/header.jade
+
+
+
+
+body
+
+  a(href="/campgrounds/new") add new
+  div.sm-12
+    each item in obj 
+      div.sm-6
+        img(src=item.url alt="N/A")
+        li= item.description
+        li= item.id
+        li= item.name 
+        div created by 
+           li= item.author.username
+        p 
+          a(href=`campgrounds/${item._id}` class="btn btn-primary") MORE INFO 
+a(href="/logout") LOGOUT

@@ -1,0 +1,10 @@
+Working App made by JS, 
+dependencies :
+-- express
+-- express-session
+-- passport
+-- passport-local
+-- passport-local-mongoose 
+-- mongoose 
+-- jade (for Template)
+

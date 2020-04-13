@@ -1,0 +1,11 @@
+1 This is a Form for the page 
+               form(action="/campgrounds/"+foundcamp._id +"/edit?_method=PUT" method="POST")
+                   input(name="id" type="text" placeholder="id")  
+                   input(name="name" type="text" placeholder="name" value=`${foundcamp.name}`) 
+                   input(name="desc" type="text" placeholder="desc" value=`${foundcamp.description}`)
+
+                   input(name="url" type="text" placeholder="url" value=`${foundcamp.url}`) 
+                   button submit
+
+          
+
